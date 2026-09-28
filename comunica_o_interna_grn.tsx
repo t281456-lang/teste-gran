@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import granLogo from './src/gran.png';
 import {
   Printer,
   Save,
@@ -66,71 +67,12 @@ const INITIAL_EMPTY_DATA = {
   despachoResposta: ''
 };
 
-const GRNLogo = ({ className = "w-16 h-20" }) => (
-  <svg viewBox="0 0 120 150" className={className} xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-        <feDropShadow dx="1" dy="2" stdDeviation="1.5" floodOpacity="0.3" />
-      </filter>
-      <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#F59E0B" />
-        <stop offset="50%" stopColor="#FCD34D" />
-        <stop offset="100%" stopColor="#D97706" />
-      </linearGradient>
-    </defs>
-    {/* Outer Shield Outline */}
-    <path
-      d="M 10,10 L 110,10 L 110,90 Q 110,135 60,148 Q 10,135 10,90 Z"
-      fill="#000000"
-    />
-    <path
-      d="M 12,12 L 108,12 L 108,89 Q 108,133 60,145 Q 12,133 12,89 Z"
-      fill="#FFFFFF"
-    />
-    
-    {/* Green Stripe (Left) */}
-    <path
-      d="M 14,14 L 45,14 L 45,123 Q 27,114 14,92 Z"
-      fill="#008C45"
-    />
-    
-    {/* White Stripe (Center) */}
-    <path
-      d="M 45,14 L 75,14 L 75,138 Q 60,143 45,138 Z"
-      fill="#FFFFFF"
-    />
-    
-    {/* Red Stripe (Right) */}
-    <path
-      d="M 75,14 L 106,14 L 106,92 Q 93,114 75,123 Z"
-      fill="#CD212A"
-    />
-
-    {/* Inner Border */}
-    <path
-      d="M 16,16 L 104,16 L 104,88 Q 104,130 60,141 Q 16,130 16,88 Z"
-      fill="none"
-      stroke="#000000"
-      strokeWidth="2.5"
-    />
-
-    {/* GRN Text */}
-    <text
-      x="60"
-      y="78"
-      fontFamily="Arial, Helvetica, sans-serif"
-      fontWeight="900"
-      fontSize="34"
-      fill="url(#goldGrad)"
-      stroke="#1E1B4B"
-      strokeWidth="1.5"
-      textAnchor="middle"
-      filter="url(#shadow)"
-      letterSpacing="-1"
-    >
-      GRN
-    </text>
-  </svg>
+const GRNLogo = ({ className = "w-16 h-20" }: { className?: string }) => (
+  <img
+    src={granLogo}
+    alt="Sociedade Esportiva Gran São João"
+    className={`object-contain ${className}`}
+  />
 );
 
 export default function App() {
